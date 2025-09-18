@@ -54,18 +54,16 @@ describe('logAction', () => {
     // User logs in
     it('User Alice logs in', () => {
         const timestamp = new Date().toISOString()
-        expect(logAction("login", "Alice")).toBe(`User Alice performed login at $
-        {timestamp}`);
+        expect(logAction("login", "Alice")).toBe(`User Alice performed login at ${timestamp}`);
     });
     // Missing action or username.
     it('Username is missing', () => {
         const timestamp = new Date().toISOString()
-        expect(logAction("login")).toBe(`User undefined performed login at $
-        {timestamp}`);
+        expect(logAction("login")).toBe(`User undefined performed login at ${timestamp}`);
     });
     // Empty strings as inputs.
     it('inputs are empty', () => {
         const timestamp = new Date().toISOString()
-        expect(logAction("","")).toBe(`User performed at ${timestamp}`);
+        expect(logAction("","")).toBe(`User  performed  at ${timestamp}`);
     });
 });
